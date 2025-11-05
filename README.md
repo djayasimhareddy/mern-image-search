@@ -37,27 +37,31 @@ User searches and history are stored in **MongoDB Atlas**, while the app display
 ```bash
 git clone https://github.com/djayasimhareddy/mern-image-search.git
 cd mern-image-search
+```
 
+---
 
+### 2️⃣ Install Dependencies
 
-
-
-2️⃣ Install Dependencies
-Backend
+#### Backend
+```bash
 cd server
 npm install
+```
 
-Frontend
+#### Frontend
+```bash
 cd ../client
 npm install
+```
 
+---
 
-
-
-3️⃣ Create .env File inside /server
+### 3️⃣ Create `.env` File inside `/server`
 
 Add the following environment variables:
 
+```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 UNSPLASH_ACCESS_KEY=your_unsplash_api_key
@@ -69,26 +73,31 @@ FACEBOOK_APP_ID=your_facebook_app_id
 FACEBOOK_APP_SECRET=your_facebook_app_secret
 SESSION_SECRET=random_session_key
 CLIENT_URL=http://localhost:3000
+```
 
+---
 
+### 4️⃣ Run the Application
 
-
-4️⃣ Run the Application
-Start the Backend
+#### Start the Backend
+```bash
 cd server
 node server.js
+```
 
-Start the Frontend
+#### Start the Frontend
+```bash
 cd client
 npm start
+```
 
+Now open the app in your browser 👉 [http://localhost:3000](http://localhost:3000)
 
-Now open the app in your browser 👉 http://localhost:3000
+---
 
+## 📁 Folder Structure
 
-
-
-📁 Folder Structure
+```
 mern-image-search/
 │
 ├── client/                 # React frontend
@@ -113,58 +122,45 @@ mern-image-search/
 ├── screenshots/            # Visual proof images (see below)
 │
 └── README.md               # Project documentation
-
-
-
-🧠 API Endpoints
-Method	Endpoint	Description
-GET	/auth/google	Login via Google OAuth
-GET	/auth/github	Login via GitHub OAuth
-GET	/auth/facebook	Login via Facebook OAuth
-GET	/auth/logout	Logout user
-GET	/auth/user	Get the current logged-in user
-POST	/api/search	Perform image search and save history
-GET	/api/history/:userId	Get user’s past searches
-GET	/api/top-searches	Get top 5 global searches
-
-
-
-
-💬 API Testing with cURL / Postman
-
-🔹 Search
-
-curl -X POST http://localhost:5000/api/search \
-  -H "Content-Type: application/json" \
-  -d '{"term": "mountains", "userId": "USER_ID"}'
-
-
-🔹 Get User History
-
-curl http://localhost:5000/api/history/USER_ID
-
-
-🔹 Get Top Searches
-
-curl http://localhost:5000/api/top-searches
-
-
-
-
-
-🪪 License
-
-This project is open-source and available for educational purposes.
-
+```
 
 ---
 
-### ✅ After you paste:
+## 🧠 API Endpoints
 
-1. Save the file → `Ctrl + S`  
-2. Commit and push:
+| Method | Endpoint | Description |
+|:------:|:----------|:-------------|
+| **GET** | `/auth/google` | Login via Google OAuth |
+| **GET** | `/auth/github` | Login via GitHub OAuth |
+| **GET** | `/auth/facebook` | Login via Facebook OAuth |
+| **GET** | `/auth/logout` | Logout user |
+| **GET** | `/auth/user` | Get the current logged-in user |
+| **POST** | `/api/search` | Perform image search and save history |
+| **GET** | `/api/history/:userId` | Get user’s past searches |
+| **GET** | `/api/top-searches` | Get top 5 global searches |
 
+---
+
+## 💬 API Testing with cURL / Postman
+
+**🔹 Search**
 ```bash
-git add README.md
-git commit -m "Added professional formatted README"
-git push
+curl -X POST http://localhost:5000/api/search \
+  -H "Content-Type: application/json" \
+  -d '{"term": "mountains", "userId": "USER_ID"}'
+```
+
+**🔹 Get User History**
+```bash
+curl http://localhost:5000/api/history/USER_ID
+```
+
+**🔹 Get Top Searches**
+```bash
+curl http://localhost:5000/api/top-searches
+```
+
+
+## 🪪 License
+
+This project is **open-source** and available for educational purposes.
